@@ -144,11 +144,14 @@ var user1 = {
 that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
-  for (var key in user1){
-    if (user1.key !== true){
-      delete user1.key;
-    }
-  }
+  for (var key in user1) {
+    if (!user1[key]) delete user1[key];
+  };
+  // for (var key in user1){
+  //   if (user1.key !== true){
+  //     delete user1.key;
+  //   };
+  // };
 
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
@@ -215,25 +218,32 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called MakePerson which takes in name, birthday, ssn as its parameters and returns a new object with all of the information that you passed in.
 
   //Code Here
-  function MakePerson(name, birthday, ssn){
-    var obj = {
-      name: "Tester",
-      birthday: "Nov 1",
-      ssn: "123456789",
-    };
-    return obj;
-  }
+  // function MakePerson(name, birthday, ssn){
+  //   var obj = {
+  //     name: "Tester",
+  //     birthday: "Nov 1",
+  //     ssn: "123456789",
+  //   };
+  //   return obj;
+  // }
+  function MakePerson (nameParameter, birthdayParameter, ssnParameter) {
+    return {
+      name: nameParameter,
+      birthday: birthdayParameter,
+      ssn: ssnParameter
+    }
+  };
 
 //NEXT PROBLEM
 
 // Create a function called MakeCard which takes in cardNumber, expirationDate, and securityCode to make a Credit Card object and returns that object so that whenever you invoke MakeCard, you get a brand new credit card.
 
   //Code Here
-  function MakeCard(cardNumber, expirationDate, securityCode){
-    var creditCard = {
-      cardNumber: "",
-      expirationDate: "",
-      securityCode: "",
+  function MakeCard(cardNumberParameter, expirationDateParameter, securityCodeParameter){
+    return {
+      cardNumber: cardNumberParameter,
+      expirationDate: expirationDateParameter,
+      securityCode: securityCodeParameter,
     };
   }
 
@@ -245,7 +255,10 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 */
 
   //Code Here
-  function blindCard(person, creditcard){
-    var newObj = {};
-    for (MakeCard.)
-  }
+  function bindCard(person, creditCard) {
+    var paymentMethod = person;
+    for (var key in creditCard) {
+      paymentMethod[key] = creditCard[key];
+    };
+    return paymentMethod;
+  };
